@@ -1,0 +1,52 @@
+name: voice_shopping_app
+description: "A smart voice-controlled shopping list app with Gemini AI parsing."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  
+  # База данных Isar от сообщества
+  isar_community: ^3.3.2
+  isar_community_flutter_libs: ^3.3.2
+  path_provider: ^2.1.5
+
+  # Отрегулированная версия Gemini AI для совместимости
+  google_generative_ai: ^0.4.7
+
+  # Пакет для распознавания речи (микрофон)
+  shared_preferences: ^2.5.5
+  record: ^7.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  
+  # Генераторы для Isar
+  isar_community_generator: ^3.3.2
+  build_runner: ^2.4.9
+
+  # РЕЛИЗ: Утилиты для автоматической смены Package Name и генерации иконок
+  change_app_package_name: ^1.1.0
+  flutter_launcher_icons: ^0.13.1
+
+# Конфигурация для автоматической нарезки иконок под Android и iOS
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  min_sdk_android: 21
+
+# Жестко заставляем все пакеты использовать одну версию веб-утилит
+dependency_overrides:
+  http: ^1.1.0
+  meta: ^1.11.0
+
+flutter:
+  uses-material-design: true
